@@ -7,6 +7,7 @@ public class JumperMove : MonoBehaviour
     [SerializeField] Rigidbody2D rb2d;
     [SerializeField] private float jumpForce = 20f;
     [SerializeField] private float strafeSpeed = 0.1f;
+    public float verticalDist = 0f;
 
 
     private void Jump()
@@ -52,5 +53,10 @@ public class JumperMove : MonoBehaviour
         {
             StrafeLeft();
         }
+        if (verticalDist < transform.position.y)
+        {
+            verticalDist = transform.position.y;
+        }
+        
     }
 }
