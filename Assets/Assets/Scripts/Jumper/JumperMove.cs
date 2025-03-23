@@ -9,7 +9,6 @@ public class JumperMove : MonoBehaviour
     [SerializeField] private float strafeSpeed = 0.1f;
     public float verticalDist = 0f;
 
-
     private void Jump()
     {
         rb2d.AddForce(new Vector2(0, jumpForce));
@@ -30,6 +29,11 @@ public class JumperMove : MonoBehaviour
         if (collision.gameObject.tag == "Platform")
         {
             Jump();
+        }
+        if (collision.gameObject.tag == "Hazard")
+        {
+            print("jumper die");
+            //tell the game manager to play the restart screen
         }
     }
 
