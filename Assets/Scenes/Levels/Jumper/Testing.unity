@@ -122,37 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &484012376
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 484012377}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &484012377
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484012376}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7064402, y: 5.24573, z: -0.09218351}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1470488349
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,12 +224,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 302317082520658368, guid: 61a0991deacc6864490f05d12cf38db2, type: 3}
+      propertyPath: jumpForce
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 302317082520658368, guid: 61a0991deacc6864490f05d12cf38db2, type: 3}
       propertyPath: strafeSpeed
       value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5419555963457911686, guid: 61a0991deacc6864490f05d12cf38db2, type: 3}
       propertyPath: m_Name
       value: Jumper
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650445742965216774, guid: 61a0991deacc6864490f05d12cf38db2, type: 3}
+      propertyPath: orthographic size
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7719927748402908076, guid: 61a0991deacc6864490f05d12cf38db2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -313,4 +290,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 1896231881}
   - {fileID: 1470488350}
-  - {fileID: 484012377}
