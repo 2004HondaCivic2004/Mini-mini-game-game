@@ -27,7 +27,7 @@ public class RunnerObstacleSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnNewSet();
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -50,9 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 838174284156645196}
-  jumpForce: 1000
+  jumpForce: 700
   runSpeed: 15
   speedMult: 1.2
+  rayDist: 1
   horizontalDist: 0
 --- !u!50 &838174284156645196
 Rigidbody2D:
@@ -69,7 +70,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 6
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
