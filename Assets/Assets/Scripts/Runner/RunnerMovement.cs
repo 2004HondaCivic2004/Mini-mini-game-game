@@ -6,12 +6,14 @@ using UnityEngine;
 public class RunnerMovement : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb2d;
+    [SerializeField] GameObject cameraManager;
     [SerializeField] private float jumpForce = 20f;
     [SerializeField] private float runSpeed = 2f;
     [SerializeField] private float speedMult = 1f;
     [SerializeField] private float rayDist = 1f;
     public float horizontalDist = 0f;
     private Vector3 rayDisplace = new Vector3 (0.51f, 0f, 0f);
+    public RunnerGameManager gameManager;
     private void Jump()
     {
         rb2d.AddForce(new Vector2(0, jumpForce));
@@ -23,14 +25,14 @@ public class RunnerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Hazard")
         {
             print("runner die");
-            //tell the game manager to play the restart screen
+            gameManager.restartScene();
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gameManager = FindObjectOfType<RunnerGameManager>();
     }
 
     // Update is called once per frame
@@ -59,5 +61,6 @@ public class RunnerMovement : MonoBehaviour
         {
             horizontalDist = transform.position.x;
         }
+        cameraManager.transform.position = new Vector3(horizontalDist, 0, 0);
     }
 }

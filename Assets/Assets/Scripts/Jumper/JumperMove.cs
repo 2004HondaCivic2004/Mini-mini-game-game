@@ -5,9 +5,11 @@ using UnityEngine;
 public class JumperMove : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb2d;
+    [SerializeField] GameObject cameraManager;
     [SerializeField] private float jumpForce = 20f;
     [SerializeField] private float strafeSpeed = 0.1f;
     public float verticalDist = 0f;
+    public JumperGameManager gameManager;
 
     private void Jump()
     {
@@ -33,6 +35,7 @@ public class JumperMove : MonoBehaviour
         if (collision.gameObject.tag == "Hazard")
         {
             print("jumper die");
+            gameManager.restartScene();
             //tell the game manager to play the restart screen
         }
     }
@@ -43,7 +46,7 @@ public class JumperMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = FindObjectOfType<JumperGameManager>();
     }
 
     // Update is called once per frame
@@ -61,6 +64,6 @@ public class JumperMove : MonoBehaviour
         {
             verticalDist = transform.position.y;
         }
-        
+        cameraManager.transform.position = new Vector3 (0f ,verticalDist, 0f);
     }
 }
