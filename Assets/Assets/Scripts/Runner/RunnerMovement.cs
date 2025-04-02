@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,9 +12,20 @@ public class RunnerMovement : MonoBehaviour
     [SerializeField] private float runSpeed = 2f;
     [SerializeField] private float speedMult = 1f;
     [SerializeField] private float rayDist = 1f;
+    [SerializeField] private float stunTime = 0.1f;
+    [SerializeField] private bool stunned = false;
+    [SerializeField] private GameObject tmpParent;
+    private TextMeshProUGUI textMeshPro;
+
     public float horizontalDist = 0f;
     private Vector3 rayDisplace = new Vector3 (0.51f, 0f, 0f);
     public RunnerGameManager gameManager;
+    private IEnumerator stunTimer()
+    {
+        stunned = true;
+        yield return new WaitForSeconds(stunTime);
+        stunned = false;
+    }
     private void Jump()
     {
         rb2d.AddForce(new Vector2(0, jumpForce));
@@ -33,6 +45,7 @@ public class RunnerMovement : MonoBehaviour
     void Start()
     {
         gameManager = FindObjectOfType<RunnerGameManager>();
+        textMeshPro = tmpParent.GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -43,6 +56,7 @@ public class RunnerMovement : MonoBehaviour
         if (raycastHit2D && raycastHit2D.collider.gameObject.tag == "Platform")
         {
             print(raycastHit2D.collider.name);
+            StartCoroutine(stunTimer());
         }
         else
         {
@@ -52,7 +66,7 @@ public class RunnerMovement : MonoBehaviour
 
         Debug.DrawRay(transform.position + rayDisplace, Vector3.right*rayDist, Color.red);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && stunned == false)
         {
             Jump();
         }
@@ -60,6 +74,7 @@ public class RunnerMovement : MonoBehaviour
         if (horizontalDist < transform.position.x)
         {
             horizontalDist = transform.position.x;
+            textMeshPro.text = ((int)horizontalDist/3).ToString();
         }
         cameraManager.transform.position = new Vector3(horizontalDist, 0, 0);
     }
