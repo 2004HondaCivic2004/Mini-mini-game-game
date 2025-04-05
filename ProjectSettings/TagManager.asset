@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - River
+  - Road
+  - Obstacle
   - Platform
-  - Hazard
-  - Spawner
   layers:
   - Default
   - TransparentFX
