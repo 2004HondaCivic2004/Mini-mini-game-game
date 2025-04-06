@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
-public class LevelGenerator : MonoBehaviour
+public class CrosserLevelGenerator : MonoBehaviour
 {
     private Vector2 platform1PosY = new Vector2(0f, 4f);
     private Vector2 platform2PosY = new Vector2(0f, 2f);

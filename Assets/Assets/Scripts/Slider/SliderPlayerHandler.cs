@@ -11,7 +11,7 @@ public class SliderPlayerHandler : MonoBehaviour
     public GameObject gameOverOverlay;
     public GameObject pauseOverlay;
     public GameObject cursorSprite;
-    public ObstacleSpawner spawnerScript;
+    public SliderObstacleSpawner spawnerScript;
 
     // Start is called before the first frame update
     void Start()

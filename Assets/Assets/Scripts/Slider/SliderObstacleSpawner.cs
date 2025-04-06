@@ -5,7 +5,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ObstacleSpawner : MonoBehaviour
+public class SliderObstacleSpawner : MonoBehaviour
 {
     [SerializeField]
     private GameObject obstacle;
