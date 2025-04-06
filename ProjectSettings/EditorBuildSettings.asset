@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/GAD182_Minigames.unity
+    path: Assets/Scenes/Levels/_Global/GAD182_Minigames.unity
     guid: 939a20892a1cabe47a9facfe89c1b555
   - enabled: 1
-    path: Assets/Scenes/CrosserScene.unity
+    path: Assets/Scenes/Levels/Crosser/CrosserScene.unity
     guid: 12de77191fcf3934cb0496a5648e114a
   - enabled: 1
     path: Assets/Scenes/JumperScene.unity
@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/RunnerScene.unity
     guid: 49e1690d257f70a46afb24a9726e010c
   - enabled: 1
-    path: Assets/Scenes/SliderScene.unity
+    path: Assets/Scenes/Levels/Slider/SliderScene.unity
     guid: d1f75e24aa13c5544be4d0cf20899f7d
   m_configObjects: {}

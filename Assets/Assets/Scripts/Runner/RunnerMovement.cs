@@ -14,8 +14,13 @@ public class RunnerMovement : MonoBehaviour
     [SerializeField] private float rayDist = 1f;
     [SerializeField] private float stunTime = 0.1f;
     [SerializeField] private bool stunned = false;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip dieSFX;
+    [SerializeField] private AudioClip flapSFX;
     [SerializeField] private GameObject tmpParent;
+    
     private TextMeshProUGUI textMeshPro;
+    private bool isDead;
 
     public float horizontalDist = 0f;
     private Vector3 rayDisplace = new Vector3 (0.51f, 0f, 0f);
@@ -26,18 +31,30 @@ public class RunnerMovement : MonoBehaviour
         yield return new WaitForSeconds(stunTime);
         stunned = false;
     }
+
+    private IEnumerator waitOnDie()
+    {
+        isDead = true;
+        audioSource.clip = dieSFX;
+        audioSource.Play();
+        print("jumper die");
+        yield return new WaitForSeconds(1);
+        gameManager.restartScene();
+    }
+
     private void Jump()
     {
         rb2d.AddForce(new Vector2(0, jumpForce));
         print("jumping");
+        audioSource.clip = flapSFX;
+        audioSource.Play();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Hazard")
+        if (collision.gameObject.tag == "Hazard" && isDead == false)
         {
-            print("runner die");
-            gameManager.restartScene();
+            StartCoroutine(waitOnDie());
         }
     }
 
@@ -46,6 +63,7 @@ public class RunnerMovement : MonoBehaviour
     {
         gameManager = FindObjectOfType<RunnerGameManager>();
         textMeshPro = tmpParent.GetComponent<TextMeshProUGUI>();
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -66,7 +84,7 @@ public class RunnerMovement : MonoBehaviour
 
         Debug.DrawRay(transform.position + rayDisplace, Vector3.right*rayDist, Color.red);
 
-        if (Input.GetKeyDown(KeyCode.Space) && stunned == false)
+        if (Input.GetKeyDown(KeyCode.Space) && stunned == false && isDead == false)
         {
             Jump();
         }
