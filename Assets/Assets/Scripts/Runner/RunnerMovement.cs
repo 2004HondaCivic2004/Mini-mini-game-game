@@ -8,6 +8,8 @@ public class RunnerMovement : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb2d;
     [SerializeField] GameObject cameraManager;
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject restartMenu;
     [SerializeField] private float jumpForce = 20f;
     [SerializeField] private float runSpeed = 2f;
     [SerializeField] private float speedMult = 1f;
@@ -39,7 +41,8 @@ public class RunnerMovement : MonoBehaviour
         audioSource.Play();
         print("jumper die");
         yield return new WaitForSeconds(1);
-        gameManager.restartScene();
+        restartMenu.SetActive(true);
+        pauseMenu.SetActive(false);
     }
 
     private void Jump()
@@ -76,7 +79,7 @@ public class RunnerMovement : MonoBehaviour
             print(raycastHit2D.collider.name);
             StartCoroutine(stunTimer());
         }
-        else
+        else if (isDead == false)
         {
             transform.position += new Vector3(1 * runSpeed, 0) * Time.deltaTime;
             runSpeed += Time.deltaTime * (speedMult * 0.01f);
@@ -95,5 +98,11 @@ public class RunnerMovement : MonoBehaviour
             textMeshPro.text = ((int)horizontalDist/3).ToString();
         }
         cameraManager.transform.position = new Vector3(horizontalDist, 0, 0);
+
+        if (Input.GetKeyDown(KeyCode.P) && restartMenu.activeSelf == false)
+        {
+            pauseMenu.SetActive(!pauseMenu.activeSelf);
+        }
     }
+
 }

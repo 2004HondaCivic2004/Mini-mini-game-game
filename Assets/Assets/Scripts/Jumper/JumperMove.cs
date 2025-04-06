@@ -7,6 +7,8 @@ public class JumperMove : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb2d;
     [SerializeField] GameObject cameraManager;
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject restartMenu;
     [SerializeField] private float jumpForce = 20f;
     [SerializeField] private float strafeSpeed = 0.1f;
     [SerializeField] private AudioSource audioSource;
@@ -23,8 +25,11 @@ public class JumperMove : MonoBehaviour
         audioSource.clip = dieSFX;
         audioSource.Play();
         print("jumper die");
-        yield return new WaitForSeconds(3);
-        gameManager.restartScene();
+        yield return new WaitForSeconds(1);
+        restartMenu.SetActive(true);
+        pauseMenu.SetActive(false);
+        //gameManager.restartScene();
+
     }
 
     private void Jump()
@@ -84,5 +89,13 @@ public class JumperMove : MonoBehaviour
             textMeshPro.text = ((int)verticalDist / 3).ToString();
         }
         cameraManager.transform.position = new Vector3 (0f ,verticalDist, 0f);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P) && restartMenu.activeSelf == false)
+        {
+            pauseMenu.SetActive(!pauseMenu.activeSelf);
+        }
     }
 }
