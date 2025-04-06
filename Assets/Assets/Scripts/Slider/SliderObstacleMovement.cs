@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
-public class ObstacleMovement : MonoBehaviour
+public class SliderObstacleMovement : MonoBehaviour
 {
-    public ObstacleSpawner spawnerScript;
+    public SliderObstacleSpawner spawnerScript;
     public float obstacleLocationX;
     public float destroyTimer;
     public float destroyTimerMax;
@@ -14,7 +14,7 @@ public class ObstacleMovement : MonoBehaviour
     void Awake()
     {
         destroyTimer = 0;
-        spawnerScript = FindObjectOfType<ObstacleSpawner>();
+        spawnerScript = FindObjectOfType<SliderObstacleSpawner>();
         obstacleLocationX = transform.position.x;
     }
 
