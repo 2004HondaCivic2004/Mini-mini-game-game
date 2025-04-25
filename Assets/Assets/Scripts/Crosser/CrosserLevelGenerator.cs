@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor.Tilemaps;
@@ -39,7 +39,7 @@ public class CrosserLevelGenerator : MonoBehaviour
     {
         if (player.position.y == 4 && player.position.x >= -1f && player.position.x <= 1f)
         {
-            playerScript.score += 50;
+            playerScript.crosserScore += 50;
             GenerateNewLevel();
             player.position = new Vector3(0, -4, player.position.z);
         }
@@ -48,6 +48,7 @@ public class CrosserLevelGenerator : MonoBehaviour
     void GenerateNewLevel()
     {
         BroadcastMessage("DestroyObjects");
+        Debug.Log("Level generated!");
         if (floorGoalCurrent != null)
         {
             Destroy(floorGoalCurrent);
