@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleSpawner : MonoBehaviour
+public class JumperObstacleSpawner : MonoBehaviour
 {
 
     [SerializeField] private List<GameObject> ObstacleSets = new List<GameObject>();

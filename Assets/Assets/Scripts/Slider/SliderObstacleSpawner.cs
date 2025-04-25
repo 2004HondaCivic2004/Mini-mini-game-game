@@ -37,6 +37,8 @@ public class SliderObstacleSpawner : MonoBehaviour
     static int sliderHighScore;
     public float timerInterval;
     public float destroyTimerMax;
+    public GameObject pauseOverlay;
+    public SliderPlayerHandler playerHandler;
 
     // Start is called before the first frame update
     void Awake()
@@ -53,10 +55,23 @@ public class SliderObstacleSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        scoreText.SetText(score.ToString("000000"));
-        if (score >= sliderHighScore)
+        if (pauseOverlay.activeSelf == true || playerHandler.gameOverOverlay.activeSelf == true)
         {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+        scoreText.SetText(score.ToString("000000"));
+        if (score >= sliderHighScore && score != 0)
+        {
+            Debug.Log("Highscore beat!");
+            if (playerHandler.sliderBeatHighscore == false)
+            {
+                playerHandler.sliderAudioSource.PlayOneShot(playerHandler.sliderHighScoreClip);
+                playerHandler.sliderBeatHighscore = true;
+            }
             sliderHighScore = score;
             sliderHighScoreText.SetText(sliderHighScore.ToString("000000"));
             sliderHighScoreText2.SetText(sliderHighScore.ToString("000000"));
