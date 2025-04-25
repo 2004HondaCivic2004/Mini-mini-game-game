@@ -10,6 +10,8 @@ public class StartButton : MonoBehaviour
     public GameObject buttonHighlight;
     public GameObject buttonPressed;
     public string minigameScene;
+    public AudioSource buttonAudioSource;
+    public AudioClip buttonAudioClip;
 
     private void OnMouseEnter()
     {
@@ -33,6 +35,7 @@ public class StartButton : MonoBehaviour
 
     private void OnMouseDown()
     {
+        buttonAudioSource.PlayOneShot(buttonAudioClip);  
         SceneManager.LoadScene(minigameScene);
         if (buttonPressed != null)
         {

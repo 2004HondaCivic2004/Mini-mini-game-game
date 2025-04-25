@@ -21,7 +21,7 @@ public class SliderObstacleMovement : MonoBehaviour
 
 
     void Update()
-    {
+    {       
         destroyTimer += 0.01f;
         
         if (destroyTimer >= spawnerScript.destroyTimerMax)
