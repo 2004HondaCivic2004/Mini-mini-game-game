@@ -130,10 +130,32 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 462249589}
     m_Modifications:
+<<<<<<< HEAD
+=======
+    - target: {fileID: 1393097059688153379, guid: f507d8b734c74ad4eb8a86005dd69c61, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -96
+      objectReference: {fileID: 0}
+>>>>>>> sylvia
     - target: {fileID: 2275108072074110500, guid: f507d8b734c74ad4eb8a86005dd69c61, type: 3}
       propertyPath: m_Name
       value: PauseOverlay
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 2275108072074110500, guid: f507d8b734c74ad4eb8a86005dd69c61, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7404161349049479849, guid: f507d8b734c74ad4eb8a86005dd69c61, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7404161349049479849, guid: f507d8b734c74ad4eb8a86005dd69c61, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
+>>>>>>> sylvia
     - target: {fileID: 7404161349049479849, guid: f507d8b734c74ad4eb8a86005dd69c61, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -431,8 +453,13 @@ Transform:
   m_GameObject: {fileID: 520637932}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 587.5, y: 317.8, z: 0}
   m_LocalScale: {x: 51.875, y: 51.875, z: 51.875}
+=======
+  m_LocalPosition: {x: 717.75, y: 362.75, z: -1}
+  m_LocalScale: {x: 94.5, y: 94.5, z: 1}
+>>>>>>> sylvia
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1427036660}
@@ -642,7 +669,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
   m_LocalScale: {x: 750, y: 750, z: 750}
+=======
+  m_LocalScale: {x: 107.99999, y: 107.99999, z: 107.99999}
+>>>>>>> sylvia
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1427036660}
@@ -862,6 +893,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3118192039624316985, guid: c92d9d029efc0ad449facd7b20096b30, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: m_LocalScale.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118192039624316985, guid: c92d9d029efc0ad449facd7b20096b30, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118192039624316985, guid: c92d9d029efc0ad449facd7b20096b30, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0769231
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118192039624316985, guid: c92d9d029efc0ad449facd7b20096b30, type: 3}
+>>>>>>> sylvia
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -901,6 +947,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 3118192039624316985, guid: c92d9d029efc0ad449facd7b20096b30, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235841966657944801, guid: c92d9d029efc0ad449facd7b20096b30, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -34
+      objectReference: {fileID: 0}
+>>>>>>> sylvia
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -942,9 +999,15 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+<<<<<<< HEAD
   - {fileID: 1653163015}
   - {fileID: 520637933}
   - {fileID: 1081627563}
+=======
+  - {fileID: 1081627563}
+  - {fileID: 520637933}
+  - {fileID: 1653163015}
+>>>>>>> sylvia
   m_Father: {fileID: 1115464794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1133,16 +1196,26 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653163014}
+<<<<<<< HEAD
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+=======
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
+>>>>>>> sylvia
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1427036660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 579.9792, y: 328.8958}
+=======
+  m_AnchoredPosition: {x: 740, y: 333}
+>>>>>>> sylvia
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1653163016
@@ -1165,7 +1238,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
   m_text: XX
+=======
+  m_text: 000000
+>>>>>>> sylvia
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1175,7 +1252,11 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4285345632
+<<<<<<< HEAD
   m_fontColor: {r: 0.3764706, g: 0.18431373, b: 0.42745098, a: 1}
+=======
+  m_fontColor: {r: 0.37647063, g: 0.18431373, b: 0.427451, a: 1}
+>>>>>>> sylvia
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1192,6 +1273,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
+<<<<<<< HEAD
   m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
@@ -1203,6 +1285,19 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+=======
+  m_fontSize: 67
+  m_fontSizeBase: 67
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 12
+>>>>>>> sylvia
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1228,7 +1323,11 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
+<<<<<<< HEAD
   m_margin: {x: 0, y: 0, z: 0, w: 0}
+=======
+  m_margin: {x: -100.7368, y: 0, z: -101.76021, w: 61.916634}
+>>>>>>> sylvia
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
